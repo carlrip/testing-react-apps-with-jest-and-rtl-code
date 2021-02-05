@@ -1,4 +1,4 @@
-import { isUrl } from "./isUrl";
+import { isUrl } from "./validators";
 
 test("Should return true when valid url", () => {
   expect(isUrl("https://www.google.com")).toBe(true);
