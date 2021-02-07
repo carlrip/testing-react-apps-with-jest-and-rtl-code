@@ -12,5 +12,5 @@ test("getName should return correct name when 1 passed in", async () => {
 
 test("getName should return null when 2 passed", async () => {
   const name = await getName(2);
-  expect(name).toBeNull();
+  expect(name).toBe(null);
 });
