@@ -11,10 +11,6 @@
     "typescript": "^4.1.3"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:single": "jest -t",
-    "test:verbose": "jest --verbose",
-    "test:coverage": "jest --coverage"
+    "test": "jest"
   }
 }

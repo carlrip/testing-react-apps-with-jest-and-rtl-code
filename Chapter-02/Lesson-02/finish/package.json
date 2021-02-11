@@ -8,8 +8,6 @@
     "jest": "^26.6.3"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:single": "jest -t"
+    "test": "jest"
   }
 }
