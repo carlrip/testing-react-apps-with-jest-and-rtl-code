@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should return correct object when valid id 1`] = `
+Object {
+  "firstName": "Bill",
+  "id": 1,
+  "lastName": "Peters",
+}
+`;

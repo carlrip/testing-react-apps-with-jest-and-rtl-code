@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should return correct array when have matches 1`] = `
+Array [
+  Object {
+    "firstName": "Bill",
+    "id": 1,
+    "lastName": "Peterson",
+  },
+  Object {
+    "firstName": "Sue",
+    "id": 3,
+    "lastName": "Peel",
+  },
+]
+`;
