@@ -10,7 +10,9 @@ test("Should render correct message when message prop passed", () => {
     render(<ErrorMessage message="test" />, container);
   });
 
-  const div = document.querySelector(".saveerror");
+  const div = document.querySelector(".save-error");
 
   expect(div.textContent).toBe("test");
+
+  div.remove();
 });
