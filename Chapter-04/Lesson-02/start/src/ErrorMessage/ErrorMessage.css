@@ -1,0 +1,10 @@
+.save-error {
+  margin: 10px;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+.save-error img {
+  width: 25px;
+  margin-right: 5px;
+}
