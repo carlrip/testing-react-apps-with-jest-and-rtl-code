@@ -1,0 +1,10 @@
+.person-page {
+  padding: 10px 20px;
+}
+.person-page h3 {
+  margin: 0 0 10px;
+}
+.person-page ul {
+  margin: 10 0;
+  padding: 0 20px;
+}
