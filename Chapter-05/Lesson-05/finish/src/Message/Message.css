@@ -1,0 +1,21 @@
+.error {
+  margin: 10px 0px 0 205px;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+.error img {
+  width: 25px;
+  margin-right: 5px;
+}
+
+.success {
+  margin: 10px 0px 0 205px;
+  color: green;
+  display: flex;
+  align-items: center;
+}
+.success img {
+  width: 25px;
+  margin-right: 5px;
+}
