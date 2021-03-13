@@ -11,3 +11,6 @@
 .success-message {
   color: green;
 }
+.field-error {
+  color: red;
+}

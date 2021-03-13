@@ -54,7 +54,7 @@ export function EditPersonName({ id }) {
           ref={register({ required: true })}
         />
         {errors.firstName && errors.firstName.type === "required" && (
-          <span className={css.fielderror}>You must enter the first name</span>
+          <span className="field-error">You must enter the first name</span>
         )}
       </div>
       <div className="row">
