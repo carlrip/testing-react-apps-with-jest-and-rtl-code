@@ -33,7 +33,7 @@ export function ContactForm() {
         </select>
       </div>
       <div className="row">
-        <label htmlFor="detail">Message</label>
+        <label htmlFor="message">Message</label>
         <textarea
           type="text"
           id="message"
