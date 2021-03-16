@@ -30,7 +30,7 @@ export function ContactForm() {
         <select type="text" id="department" name="department" ref={register}>
           <option value="sales">Sales</option>
           <option value="support">Support</option>
-          <option value="support">Finance</option>
+          <option value="finance">Finance</option>
         </select>
       </div>
       <div className="row">
