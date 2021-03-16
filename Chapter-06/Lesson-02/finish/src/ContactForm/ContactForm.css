@@ -1,0 +1,18 @@
+.form {
+  padding: 10px 20px;
+}
+.form .row {
+  display: flex;
+  margin-bottom: 10px;
+}
+.form label {
+  display: inline-block;
+  width: 80px;
+}
+.form .success-message {
+  color: green;
+}
+.form .field-error {
+  color: red;
+  margin-left: 5px;
+}
