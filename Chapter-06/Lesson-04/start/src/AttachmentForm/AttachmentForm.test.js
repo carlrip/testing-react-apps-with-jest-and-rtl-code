@@ -2,12 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { AttachmentForm } from "./AttachmentForm";
 import userEvent from "@testing-library/user-event";
 
-test("Clicking Save button when file has been selected should render a success message containing file name", async () => {
+test("Clicking Upload button when file has been selected should render a success message containing file name", async () => {
   render(<AttachmentForm />);
 
-  userEvent.click(screen.getByText("Save"));
-
-  expect(
-    await screen.findByText("Successfully saved test.text")
-  ).toBeInTheDocument();
+  userEvent.click(screen.getByText("Upload"));
 });
