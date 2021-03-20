@@ -27,7 +27,13 @@ export function ContactForm() {
       </div>
       <div className="row">
         <label htmlFor="department">Department</label>
-        <select type="text" id="department" name="department" ref={register}>
+        <select
+          type="text"
+          multiple
+          id="department"
+          name="department"
+          ref={register}
+        >
           <option value="sales">Sales</option>
           <option value="support">Support</option>
           <option value="finance">Finance</option>
