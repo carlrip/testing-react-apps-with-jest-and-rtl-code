@@ -1,0 +1,10 @@
+.form {
+  padding: 10px 20px;
+}
+.form .row {
+  margin-bottom: 10px;
+}
+.form .field-error {
+  color: red;
+  font-size: 0.8rem;
+}
