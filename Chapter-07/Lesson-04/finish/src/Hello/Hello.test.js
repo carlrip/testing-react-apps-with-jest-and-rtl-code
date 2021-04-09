@@ -15,7 +15,7 @@ test("Should include users name when rendered", async () => {
   expect(data.getUser).toHaveBeenCalledWith(1);
 
   data.getUser.mockClear();
-  await data.getUser(3);
+  await data.getUser(2);
   expect(data.getUser).toHaveBeenCalledTimes(1);
 
   data.getUser.mockReset();
