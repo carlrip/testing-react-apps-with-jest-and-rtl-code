@@ -3,9 +3,7 @@ import { Hello } from "./Hello";
 import * as data from "./data";
 
 test("Should include users name when rendered", async () => {
-  data.getUser = jest
-    .spyOn(data, "getUser")
-    .mockResolvedValue({ id: 1, name: "Bob" });
+  jest.spyOn(data, "getUser").mockResolvedValue({ id: 1, name: "Bob" });
 
   render(<Hello id={1} />);
 
