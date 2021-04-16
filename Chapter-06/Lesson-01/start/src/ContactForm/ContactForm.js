@@ -4,7 +4,12 @@ import { post } from "./data";
 import "./ContactForm.css";
 
 export function ContactForm() {
-  const { register, errors, handleSubmit, formState } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    formState,
+  } = useForm();
 
   async function onSubmit(data) {
     await post(data);
@@ -18,7 +23,7 @@ export function ContactForm() {
           type="text"
           id="name"
           name="name"
-          ref={register({ required: true })}
+          {...register("name", { required: true })}
         />
         {errors.name && errors.name.type === "required" && (
           <span className="field-error">You must enter your name</span>
@@ -26,7 +31,12 @@ export function ContactForm() {
       </div>
       <div className="row">
         <label htmlFor="department">Department</label>
-        <select type="text" id="department" name="department" ref={register}>
+        <select
+          type="text"
+          id="department"
+          name="department"
+          {...register("department")}
+        >
           <option value="sales">Sales</option>
           <option value="support">Support</option>
           <option value="finance">Finance</option>
@@ -38,7 +48,7 @@ export function ContactForm() {
           type="text"
           id="message"
           name="message"
-          ref={register({ required: true })}
+          {...register("message", { required: true })}
         />
         {errors.message && errors.message.type === "required" && (
           <span className="field-error">You must enter a message</span>

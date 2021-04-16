@@ -4,7 +4,7 @@ import { search } from "./data";
 import "./SearchForm.css";
 
 export function SearchForm() {
-  const { register, errors, handleSubmit, reset, formState } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
   const [results, setResults] = React.useState([]);
 
   async function onSubmit({ criteria }) {
@@ -23,13 +23,14 @@ export function SearchForm() {
           type="search"
           name="criteria"
           placeholder="Enter search criteria"
-          ref={register({ required: true })}
+          {...register("criteria", { required: true })}
         />
         <button type="submit">Search</button>
       </div>
-      {errors.criteria && errors.criteria.type === "required" && (
-        <div className="field-error">You must enter some search criteria</div>
-      )}
+      {formState.errors.criteria &&
+        formState.errors.criteria.type === "required" && (
+          <div className="field-error">You must enter some search criteria</div>
+        )}
       {formState.isSubmitting && <p>Searching ...</p>}
       <div className="row">
         {results.map((result) => (

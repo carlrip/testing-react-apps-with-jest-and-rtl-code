@@ -4,7 +4,11 @@ import { getPerson, updateName } from "./personData";
 import "./EditPersonName.css";
 
 export function EditPersonName({ id }) {
-  const { register, errors, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const [loading, setLoading] = React.useState(true);
   const [person, setPerson] = React.useState(undefined);
   const [saved, setSaved] = React.useState(false);
@@ -52,7 +56,7 @@ export function EditPersonName({ id }) {
           data-testid="firstName"
           placeholder="Enter first name"
           defaultValue={person.firstName}
-          ref={register({ required: true })}
+          {...register("firstName", { required: true })}
         />
         {errors.firstName && errors.firstName.type === "required" && (
           <span className="field-error">You must enter the first name</span>
@@ -66,7 +70,7 @@ export function EditPersonName({ id }) {
           name="lastName"
           placeholder="Enter last name"
           defaultValue={person.lastName}
-          ref={register}
+          {...register("lastName")}
         />
       </div>
       <button type="submit">Save</button>

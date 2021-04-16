@@ -26,7 +26,7 @@ export function AttachmentForm() {
           disabled={formState.isSubmitSuccessful}
           id="attachment"
           name="attachment"
-          ref={register()}
+          {...register("attachment")}
         />
       </div>
       <button type="submit" disabled={formState.isSubmitSuccessful}>
