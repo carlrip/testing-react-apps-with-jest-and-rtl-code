@@ -1,0 +1,48 @@
+.title {
+  margin: 20px 30px 10px;
+}
+.homeButton {
+  margin: 0px 0px 10px 30px;
+  padding: 4px 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  background-color: #ebebeb;
+  color: black;
+  text-decoration: none;
+}
+.form {
+  margin-bottom: 30px;
+}
+.form div.row {
+  margin-bottom: 5px;
+}
+.form label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  margin-right: 3px;
+}
+.form input {
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1px solid #e2ecef;
+}
+.form button[type="submit"] {
+  margin: 10px 0 0 205px;
+  border: 1px solid #bdbdbd;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+.form .fielderror {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.successmessage {
+  color: green;
+}
+
+.errormessage {
+  color: red;
+}

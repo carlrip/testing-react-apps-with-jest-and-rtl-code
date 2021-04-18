@@ -1,0 +1,12 @@
+.title {
+  margin: 20px 30px 10px;
+}
+.addbutton {
+  margin: 0px 0px 10px 30px;
+  padding: 4px 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  background-color: #ebebeb;
+  color: black;
+  text-decoration: none;
+}
