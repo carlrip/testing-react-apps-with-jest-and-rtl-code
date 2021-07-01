@@ -1,0 +1,10 @@
+.savesuccess {
+  margin: 10px 0px 0 205px;
+  color: green;
+  display: flex;
+  align-items: center;
+}
+.savesuccess img {
+  width: 25px;
+  margin-right: 5px;
+}

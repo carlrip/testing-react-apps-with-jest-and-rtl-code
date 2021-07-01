@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "note": "This is an important note."
+    },
+    {
+      "note": "super note",
+      "id": 2
+    },
+    {
+      "note": "another note",
+      "id": 3
+    }
+  ]
+}

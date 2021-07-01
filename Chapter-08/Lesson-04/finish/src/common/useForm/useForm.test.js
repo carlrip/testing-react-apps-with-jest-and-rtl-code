@@ -8,8 +8,8 @@ test("values should be empty object when first rendered", () => {
 
 test("values should be updated when field changes", () => {
   const { result } = renderHook(() => useForm());
+  const field = result.current.register("field");
   act(() => {
-    const field = result.current.register("field");
     field.onChange({ target: { value: "test" } });
   });
   expect(result.current.values.field).toBe("test");
@@ -18,8 +18,8 @@ test("values should be updated when field changes", () => {
 test("submit callback should be called when form submitted", () => {
   const { result } = renderHook(() => useForm());
   const onSubmit = jest.fn();
+  const field = result.current.register("field");
   act(() => {
-    const field = result.current.register("field");
     field.onChange({ target: { value: "test" } });
   });
   act(() => {
