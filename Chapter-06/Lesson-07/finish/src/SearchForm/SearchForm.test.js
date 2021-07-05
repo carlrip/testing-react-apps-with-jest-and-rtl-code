@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import { SearchForm } from "./SearchForm";
 import userEvent from "@testing-library/user-event";
 
@@ -41,6 +41,9 @@ test("Clicking Clear button should clear criteria and results", async () => {
   userEvent.type(screen.getByPlaceholderText("Enter search criteria"), "app");
   userEvent.click(screen.getByText("Search"));
   await screen.findByText("Apple");
+  await act(async ()=> {
+    userEvent.click(screen.getByText("Clear"));
+  });
   userEvent.click(screen.getByText("Clear"));
   expect(
     screen.getByPlaceholderText("Enter search criteria")
