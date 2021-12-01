@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { SearchForm } from "./SearchForm";
 import userEvent from "@testing-library/user-event";
 
