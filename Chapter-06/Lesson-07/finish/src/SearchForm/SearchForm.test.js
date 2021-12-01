@@ -41,12 +41,9 @@ test("Clicking Clear button should clear criteria and results", async () => {
   userEvent.type(screen.getByPlaceholderText("Enter search criteria"), "app");
   userEvent.click(screen.getByText("Search"));
   await screen.findByText("Apple");
-  await act(async ()=> {
-    userEvent.click(screen.getByText("Clear"));
-  });
   userEvent.click(screen.getByText("Clear"));
   expect(
-    screen.getByPlaceholderText("Enter search criteria")
+    await screen.findByPlaceholderText("Enter search criteria")
   ).toHaveDisplayValue("");
   expect(screen.queryByText("Apple")).not.toBeInTheDocument();
 });
