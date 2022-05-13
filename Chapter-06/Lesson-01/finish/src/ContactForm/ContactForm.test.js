@@ -7,7 +7,7 @@ test("Clicking submit button without filling in form renders name validation err
   render(<ContactForm />);
   const saveButton = screen.getByText("Save");
   // fireEvent(saveButton, new MouseEvent("click"));
-  user.click(saveButton);
+  await user.click(saveButton);
   expect(
     await screen.findByText("You must enter your name")
   ).toBeInTheDocument();
