@@ -82,6 +82,8 @@ test("Should render correct data in notes table", async () => {
 });
 
 test("Should open New Note page when Add button is clicked", async () => {
+  const user = userEvent.setup();
+
   jest.spyOn(window, "fetch");
   fetch.mockResolvedValue(
     new Response(JSON.stringify([
@@ -98,7 +100,7 @@ test("Should open New Note page when Add button is clicked", async () => {
     </MemoryRouter>
   );
 
-  userEvent.click(screen.getByText("Add new note"));
+  await user.click(screen.getByText("Add new note"));
 
   expect(await screen.findByText("New Note")).toBeInTheDocument();
   

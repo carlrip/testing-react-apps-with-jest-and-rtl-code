@@ -17,6 +17,8 @@ test("Should render correct page title", () => {
 
 
 test("Should render success message when save is successful", async () => {
+  const user = userEvent.setup();
+
   jest.spyOn(window, "fetch");
   fetch.mockResolvedValue(
     new Response(JSON.stringify({}), { status: 200 })
@@ -28,8 +30,10 @@ test("Should render success message when save is successful", async () => {
     </MemoryRouter>
   );
 
-  userEvent.type(await screen.findByLabelText("Note"), "Test");
-  userEvent.click(await screen.findByText("Save"));
+  (await screen.findByLabelText("Note")).focus();
+  await user.keyboard("Test");
+
+  await user.click(await screen.findByText("Save"));
 
   expect(await screen.findByText("The note was successfully added")).toBeInTheDocument();
   expect(fetch).toHaveBeenCalledTimes(1);
@@ -38,6 +42,8 @@ test("Should render success message when save is successful", async () => {
 });
 
 test("Should render error message when save is not successful", async () => {
+  const user = userEvent.setup();
+
   jest.spyOn(window, "fetch");
   fetch.mockResolvedValue(
     new Response(JSON.stringify({}), { status: 500 })
@@ -49,8 +55,10 @@ test("Should render error message when save is not successful", async () => {
     </MemoryRouter>
   );
 
-  userEvent.type(await screen.findByLabelText("Note"), "Test");
-  userEvent.click(await screen.findByText("Save"));
+  (await screen.findByLabelText("Note")).focus();
+  await user.keyboard("Test");
+
+  await user.click(await screen.findByText("Save"));
 
   expect(
     await screen.findByText("There was a problem adding this note")
@@ -61,13 +69,14 @@ test("Should render error message when save is not successful", async () => {
 });
 
 test("Should open home page when home link is pressed", async () => {
+  const user = userEvent.setup();
   render(
     <MemoryRouter initialEntries={["/new"]}>
       <App />
     </MemoryRouter>
   );
 
-  userEvent.click(await screen.findByText("Go to home"));
+  await user.click(await screen.findByText("Go to home"));
 
   expect(await screen.findByText("Notes")).toBeInTheDocument();
 });
