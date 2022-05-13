@@ -3,20 +3,26 @@ import { ContactForm } from "./ContactForm";
 import userEvent from "@testing-library/user-event";
 
 test("Clicking Save button when form is completed in should render a success message", async () => {
+  const user = userEvent.setup();
   render(<ContactForm />);
 
-  userEvent.type(screen.getByLabelText("Name"), "test");
-  userEvent.type(screen.getByLabelText("Message"), "test");
+  screen.getByLabelText("Name").focus();
+  await user.keyboard("test");
+  screen.getByLabelText("Message").focus();
+  await user.keyboard("test");
 
-  userEvent.click(screen.getByText("Save"));
+  await user.click(screen.getByText("Save"));
   expect(await screen.findByText("Successfully saved")).toBeInTheDocument();
 });
 
 test("Pressing Enter when form is completed in should render a success message", async () => {
+  const user = userEvent.setup();
   render(<ContactForm />);
 
-  userEvent.type(screen.getByLabelText("Message"), "test");
-  userEvent.type(screen.getByLabelText("Name"), "test{enter}");
-
+  screen.getByLabelText("Message").focus();
+  await user.keyboard("test");
+  screen.getByLabelText("Name").focus();
+  await user.keyboard("test{enter}");
+  
   expect(await screen.findByText("Successfully saved")).toBeInTheDocument();
 });
